@@ -1,0 +1,28 @@
+# Node
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# Build / dist
+dist/
+build/
+
+# TypeScript
+*.tsbuildinfo
+
+# Vitest / coverage
+coverage/
+.vitest/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
