@@ -31,43 +31,32 @@ export default function longestSemiRepetitiveSubstring(s: string) {
   /**
    * EDGE case:
    * empty string => 0;
-   *
-   * SLIDING WINDOW:
-   * Variables: start, end, isValid
-   *
-   * in a while loop keep track of start and end
-   * update end + 1 each time
-   * when digit next to the end is the same as the end, toggle isValid variable
-   * when isValid is false and the end hits condition, move start
    */
   let start = 0;
-  let end = 0;
-  let isValid = true;
   let longest = 0;
 
-  // i would have done more pseudocode before coding here, doing it how you're doing it now is easier to
-  // get into a rabbit hole because you aren't sure where your solution is going
-  // you can continue if you feel you know where your solution is going! if you don't, pseudocode first
-  while (end < s.length - 1) {
-    ///0 1 2 3 4 5 6 7
-    // 5 2 2 3 3 4 5 5 end = 0, len = 5, condition if end reaches to the end of a string 0 < 4
-    let currDigit = s[end]; // 5 2 2 3 3
-    let nextDigit = s[end + 1]; // 2 2 3 3 4
-    if (currDigit === nextDigit) {
-      // false true false true
-      if (!isValid) {
-        // false false true
-        // i can't proceed
-        // first, Math.max longest saved substring and current substring length
-        // second, move start
-        longest = Math.max(longest, end - start + 1); // actual len of 0 to 3 is 4, +1 is getting lost somewhere. longest = 3;
-        start++; // 1
-      } else {
-        // to indicate that i already have at least 1 pair, i'll flag is that there is
-        isValid = false; // isValid = false
-      }
+  // create a map to track where was a char seen last
+  const lastSeen = new Map();
+  // track last duplicate within window
+  let duplicateInd;
+
+  // move end of sliding window
+  for (let i = 0; i < s.length; i++) {
+    // look for a char in map
+    const seenChar = lastSeen.get(s[i]);
+
+    // check is 2 chars are adjacent
+    if (seenChar + 1 === i) {
+      // if adjacent pair is already
+      if (duplicateInd) start = duplicateInd;
+      // update last ind of dup num
+      duplicateInd = i;
     }
-    end++; // 1 2 3 4
+
+    // register char in map
+    lastSeen.set(s[i], i);
+    // calculate longest substring, add + 1 to compensate for 0-indexed arr
+    longest = Math.max(longest, i - start + 1);
   }
 
   return longest;
