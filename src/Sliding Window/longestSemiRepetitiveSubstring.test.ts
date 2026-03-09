@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import longestSemiRepetitiveSubstring from "./longestSemiRepetitiveSubstring";
 
-describe.only("longestSemiRepetitiveSubstring", () => {
+describe("longestSemiRepetitiveSubstring", () => {
   it("should be defined", () => {
     expect(longestSemiRepetitiveSubstring).toBeDefined();
   });
