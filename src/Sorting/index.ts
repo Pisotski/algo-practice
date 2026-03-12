@@ -1,3 +1,3 @@
-import { mergeTwoSortedArrays } from "./mergeSort";
+import { mergeTwoSortedArrays, mergeSort } from "./mergeSort";
 
-export { mergeTwoSortedArrays };
+export { mergeTwoSortedArrays, mergeSort };
