@@ -38,18 +38,18 @@ export default function smallestArrayWithSumS(
   // left:
   // right:
   //
-  // while right is within the window
   let left = 0;
   let right = 0;
   let currSum = 0;
   let result = Infinity;
-  // add right to currSum
+  // while right is within the window
   while (right < array.length) {
+    // add right to currSum
     currSum += array[right];
 
     while (currSum >= s) {
       // see if result is greater than s
-      // Math.min(result and current sum) <= i don't know when to record it. this is the trickiest part
+      // Math.min(result and current sum) <= double check when to record it. this is the trickiest part
       // continue moving left +1 and currSum - left until currSum is smaller than s or meets the right
       result = Math.min(result, right - left + 1);
       currSum -= array[left];
