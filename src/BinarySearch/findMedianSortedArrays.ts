@@ -17,4 +17,26 @@
 export default function findMedianSortedArrays(
   nums1: number[],
   nums2: number[],
+
+  //   Identify which array is smaller (call it A) and the other is B.
+
+  // Set your search boundaries: start with imin = 0 and imax = length of A.
+
+  // While imin is less than or equal to imax:
+
+  // Compute i as the middle of the current range in A.
+
+  // Compute j as half length minus i (so the two partitions balance).
+
+  // Check if i is too small: if so, move imin up.
+
+  // Check if i is too large: if so, move imax down.
+
+  // Otherwise, you've found the perfect split. Compute:
+
+  // If total length is odd, the median is the max of the left side.
+
+  // If total length is even, the median is the average of the max left and min right.
+
+  // Return the median.
 ) {}

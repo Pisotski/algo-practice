@@ -129,11 +129,11 @@ export class LinkedList {
 }
 
 let linkedList = new LinkedList();
-linkedList.append(5);
-linkedList.append(3);
-linkedList.append(67);
-linkedList.append(99);
-linkedList.append(-0);
+// linkedList.append(5);
+// linkedList.append(3);
+// linkedList.append(67);
+// linkedList.append(99);
+// linkedList.append(-0);
 
-linkedList.reverse();
-console.log(linkedList.toArray());
+// linkedList.reverse();
+// console.log(linkedList.toArray());
