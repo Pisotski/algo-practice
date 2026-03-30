@@ -59,9 +59,11 @@ export default function arraySortPow(nums: number[]): number[] {
       }
     }
   }
+  /*
   console.log("LEFT RIGHT");
   console.log(nums);
   console.log(left, right);
+  */
   // left is the last negative element, right is the first positive number
 
   // while left pointer is larger than 0 and right pointer smaller the nums.len. [-1,2]
@@ -81,22 +83,29 @@ export default function arraySortPow(nums: number[]): number[] {
     if (left < 0 || Math.abs(nums[left]) > Math.abs(nums[right])) {
       const square = Math.pow(nums[right], 2);
       result.push(square);
+      /*
+
       console.log(
         `left ${nums[left]} square is larger than right or doesn't exist ${nums[right]} square, right goes up`,
       );
+      */
+
       right++;
     } else {
       const square = Math.pow(nums[left], 2);
+      /*
       console.log(
         `left ${nums[left]} square is smaller than right ${nums[right]} square or right doesn't exist, left goes down`,
-      );
-
+        );
+*/
       result.push(square);
       left--;
     }
+    /*
     console.log(`NEW RESULT`);
     console.log(result);
     console.log(`${left} <<<=== NEW LEFT \n ${right} <<<=== NEW RIGHT`);
+  */
   }
   // compare math.abs of left and right
   // record smaller number. is smaller is left decrement left, otherwise increment right
