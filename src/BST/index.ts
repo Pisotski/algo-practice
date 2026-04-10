@@ -1,5 +1,5 @@
 import { AVLTree } from "./AVLTree";
-import BST from "./bst";
+import BST from "./BST";
 import { RedBlackTree } from "./RedBlackTree";
 import TreeNode from "./TreeNode";
 
